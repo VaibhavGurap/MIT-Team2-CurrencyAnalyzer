@@ -64,3 +64,10 @@ class Trend():
 
         return JsonResponse(response_data)
 
+    def yearly(self,year,curr1,curr2):
+        response_data = {}
+        record = [j for j in CurrencyRecord.objects.filter(date__year=year).values_list('date', curr1, curr2)]
+        if len(record)>0:
+            response_data[0]={'date': record[0][0], curr1: record[0][1], curr2: record[0][2]}
+            response_data[1] = {'date': record[-1][0], curr1: record[-1][1], curr2: record[-1][2]}
+        return JsonResponse(response_data)
