@@ -6,7 +6,8 @@ from .views import *
 router = routers.DefaultRouter()
 #router.register(r'api',CurrencyViewSet)
 urlpatterns = [
-    path('trend/',Trend.weekly)
+    path('trend/<year>/<curr1>/<curr2>/w',Trend.weekly),
+    path('trend/<year>/<curr1>/<curr2>/m',Trend.monthly),
     #path('',include(router.urls)),
 
 ]
