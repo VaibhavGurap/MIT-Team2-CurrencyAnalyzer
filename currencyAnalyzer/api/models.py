@@ -7,6 +7,7 @@ class CurrencyRecord(models.Model):
     AUD = models.FloatField(null=True, default=None)
     BHD = models.FloatField(null=True, default=None)
     VEF = models.FloatField(null=True, default=None)
+    VES = models.FloatField(null=True, default=None)
     BWP = models.FloatField(null=True, default=None)
     BRL = models.FloatField(null=True, default=None)
     BND = models.FloatField(null=True, default=None)
