@@ -13,9 +13,10 @@ function App() {
   //const [currency1, setCurrency1] = useState("from");
   //const [currency2, setCurrency2] = useState("to");
 
-  const [daily, setDaily] = useState(true);
-  const [weekly, setWeekely] = useState(false);
+  const [weekly, setWeekly] = useState(true);
   const [monthly, setMonthly] = useState(false);
+  const [quarterly, setQuarterly] = useState(false);
+  const [yearly, setYearly] = useState(false);
 
   const [graphChoice, setGraphChoice] = useState(true);
 
@@ -37,7 +38,12 @@ function App() {
       <div className="container">
         <div className="row drop">
           <div className="col-4">
-            <TrendOptions daily={daily} />
+            <TrendOptions
+              weekly={weekly}
+              monthly={monthly}
+              quarterly={quarterly}
+              yearly={yearly}
+            />
           </div>
         </div>
         <div className="row">
@@ -51,30 +57,43 @@ function App() {
             <div className="dwm">
               <button
                 onClick={() => {
-                  setDaily(true);
-                  setWeekely(false);
+                  setWeekly(true);
                   setMonthly(false);
-                }}
-              >
-                D
-              </button>
-              <button
-                onClick={() => {
-                  setDaily(false);
-                  setWeekely(true);
-                  setMonthly(false);
+                  setQuarterly(false);
+                  setYearly(false);
                 }}
               >
                 W
               </button>
               <button
                 onClick={() => {
-                  setDaily(false);
-                  setWeekely(false);
+                  setWeekly(false);
                   setMonthly(true);
+                  setQuarterly(false);
+                  setYearly(false);
                 }}
               >
                 M
+              </button>
+              <button
+                onClick={() => {
+                  setWeekly(false);
+                  setMonthly(false);
+                  setQuarterly(true);
+                  setYearly(false);
+                }}
+              >
+                Q
+              </button>
+              <button
+                onClick={() => {
+                  setWeekly(false);
+                  setMonthly(false);
+                  setQuarterly(false);
+                  setYearly(true);
+                }}
+              >
+                Y
               </button>
             </div>
 
