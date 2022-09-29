@@ -3,6 +3,7 @@ Northern Trust - Hackathon
 
 This Web App was developed using Django Framework and React.Js. The user is expected to select two curencies from the searchable selectors and select an year. A graph will be generated that displays the trend between the two currency values. This graph can be viewed as daily, weekly, monthly, or yearly trend.
 
+currencyAnalyzer folder contains django module
 PREREQUISITES:
   1. Install Django and Django REST Framework
   2. Install the mentioned react libraries:
