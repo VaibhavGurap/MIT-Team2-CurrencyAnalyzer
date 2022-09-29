@@ -10,6 +10,7 @@ PREREQUISITES:
     2.2. react-date-picker
     2.3. chart.js
   3. Also ensure you have React.Js and Node.js installed
+ 
 STEPS TO RUN THE WEB APP:
   1. Go to the directory where manage.py is located and run the following commands: 
     1.1 *python manage.py migrate*
