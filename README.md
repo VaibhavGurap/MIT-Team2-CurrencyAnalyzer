@@ -14,7 +14,7 @@ PREREQUISITES:
 STEPS TO RUN THE WEB APP:
   1. Go to the directory where manage.py is located and run the following commands: 
     1.1 *python manage.py migrate*
-    1.2. python manage.py makemigrations
-    1.3. python manage.py runsever
+    1.2. *python manage.py makemigrations*
+    1.3. *python manage.py runsever*
   2. Run the server in 127.0.0.1:8000.
   3. Launch the react app using npm start
