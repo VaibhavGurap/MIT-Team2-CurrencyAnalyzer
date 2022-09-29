@@ -1,16 +1,18 @@
-import React, { Component } from 'react';
-import Trend from 'react-trend';
+import React, { Component, useState } from 'react';
 
 export default class Graph extends Component {
   render() {
     const style={width:'50%', margin:'2%'}
+    const rawData = require('../data.json')
+    const data = JSON.parse(JSON.stringify(rawData))
+    var date, curr1,curr2,value;
+    
+    // const[data,setData]=useState({
+    //   labels:data.map((value))=>value[]
+    // })
     return (
       <div>
-        <Trend style={style}
-        data={[0, 10, 5, 22, 3.6, 11]} 
-        autoDraw
-        autoDrawDuration={1000}
-        autoDrawEasing="ease-in"/>
+        {value}
       </div>
     )
   }
