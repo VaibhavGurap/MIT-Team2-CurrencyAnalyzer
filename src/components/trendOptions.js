@@ -50,7 +50,14 @@ function TrendOptions(props) {
   const yearly = props.yearly;
   const style = { width: "100px", display: "inline-block", margin: "2%" };
   const [currency, setCurrency] = useState([]);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
+
+  useEffect(() => {
+    if (data) {
+      props.setChartData(data);
+      console.log(data);
+    }
+  }, [data]);
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/currency/")

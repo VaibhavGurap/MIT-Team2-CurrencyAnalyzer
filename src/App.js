@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ConvertLive from "./ConvertLive";
 import UserConverter from "./UserConverter";
 import BarChart from "./components/BarChart";
@@ -19,13 +19,29 @@ function App() {
   const [yearly, setYearly] = useState(false);
 
   const [graphChoice, setGraphChoice] = useState(true);
+  const [chartData, setChartData] = useState({});
+
+  useEffect(() => {
+    if (chartData) {
+      setUserData({
+        labels: Object.entries(chartData).map((item) => item[1].date),
+        datasets: [
+          {
+            label: "Exchange Rates",
+            data: Object.entries(chartData).map((item) => item[1].curr2),
+            backgroundColor: ["black", "red", "blue"],
+          },
+        ],
+      });
+    }
+  }, [chartData]);
 
   const [userData, setUserData] = useState({
-    labels: Data.map((data) => data.date),
+    labels: [],
     datasets: [
       {
         label: "Exchange Rates",
-        data: Data.map((data) => data.INR),
+        data: [],
         backgroundColor: ["black", "red", "blue"],
       },
     ],
@@ -36,13 +52,14 @@ function App() {
   return (
     <div className="major ">
       <div className="container">
-        <div className="row drop">
-          <div className="col-4">
+        <div className="row">
+          <div className="col trends">
             <TrendOptions
               weekly={weekly}
               monthly={monthly}
               quarterly={quarterly}
               yearly={yearly}
+              setChartData={setChartData}
             />
           </div>
         </div>
@@ -103,10 +120,6 @@ function App() {
             <button onClick={() => setGraphChoice(false)}>
               <i class="fa fa-bar-chart"></i>
             </button>
-          </div>
-
-          <div className="chart col graph">
-            {/* <HighLow curr={currency1}/> */}
           </div>
         </div>
       </div>
