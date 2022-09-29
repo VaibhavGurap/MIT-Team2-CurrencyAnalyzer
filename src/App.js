@@ -23,11 +23,19 @@ function App() {
 
   useEffect(() => {
     if (chartData) {
+      const sorted = Object.entries(chartData)
+        .map((item) => item[1].curr2)
+        .sort();
+
+      var lowest = sorted[0];
+      var highest = sorted[sorted.length - 1];
+      console.log(lowest);
+      console.log(highest);
       setUserData({
         labels: Object.entries(chartData).map((item) => item[1].date),
         datasets: [
           {
-            label: "Exchange Rates",
+            label: "Exchange Rates Highest: " + highest + " Lowest: " + lowest,
             data: Object.entries(chartData).map((item) => item[1].curr2),
             backgroundColor: ["black", "red", "blue"],
           },
@@ -64,14 +72,14 @@ function App() {
           </div>
         </div>
         <div className="row">
-          <div className="chart col graph">
+          <div className="chart col">
             {graphChoice ? (
               <LineChart chartData={userData} />
             ) : (
               <BarChart chartData={userData} />
             )}
 
-            <div className="dwm">
+            <div className="wmqy">
               <button
                 onClick={() => {
                   setWeekly(true);
@@ -125,23 +133,10 @@ function App() {
       </div>
 
       <div className="converter">
-        <button
-          onClick={() => {
-            setChoice(false);
-          }}
-          className="btn btn-primary"
-        >
-          Custom
-        </button>
-        <button
-          onClick={() => {
-            setChoice(true);
-          }}
-          className="btn btn-primary"
-        >
-          Live
-        </button>
-        <div>{UserChoice ? <ConvertLive /> : <UserConverter />}</div>
+        <div>
+          <h4>Live Converter</h4>
+          <ConvertLive />
+        </div>
       </div>
     </div>
   );

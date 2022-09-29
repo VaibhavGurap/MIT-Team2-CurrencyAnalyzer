@@ -1,10 +1,14 @@
 .major {
   text-align: center;
+  background-color: #484848;
 }
+
 .converter {
   text-align: center;
   align-items: center;
+  background-color: #fff;
   margin: auto;
+  margin-top: 50px;
   width: 300px;
   height: 250px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -40,28 +44,36 @@ select {
 }
 
 .chart {
-  margin-left: 200px;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 70px;
+  background-color: #fff;
+  margin-top: 10px;
   border: black;
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
 
 .chart button {
   border-radius: 5px;
-  border: rgb(0, 208, 255) solid;
+  border: #fff;
   font-size: 25px;
-  margin: 2px;
+  margin: 5px;
 }
 
-.dwm {
+.chart button:hover {
+  background-color: #31c6d4;
+}
+
+.wmqy {
   position: absolute;
 }
-.dwm button {
+.wmqy button {
   margin-right: 20px;
-  border: rgb(43, 254, 39) solid;
-  font-size: 20px;
+  border-radius: 20px;
+  font-size: 15px;
+}
+
+.wmqy button:hover {
+  background-color: #31c6d4;
 }
 
 .float-container {
@@ -74,10 +86,6 @@ select {
   float: left;
   padding: 20px;
   border: 2px solid red;
-}
-
-.graph {
-  margin-left: 70px;
 }
 
 .dropdown {
@@ -130,7 +138,21 @@ select {
   margin-left: 100px;
 }
 .trends {
-  padding-left: 250px;
-  padding-right: 250px;
+  padding-left: 200px;
+  padding-right: 200px;
   margin-top: 25px;
+}
+.trends .s {
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+.trends .select {
+  background-color: #008080;
 }

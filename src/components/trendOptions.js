@@ -125,6 +125,7 @@ function TrendOptions(props) {
     { label: "2019", value: "2019" },
     { label: "2020", value: "2020" },
     { label: "2021", value: "2021" },
+    { label: "2022", value: "2022" },
   ];
 
   const handleChange2 = (event) => {
@@ -143,7 +144,7 @@ function TrendOptions(props) {
   };
   return (
     <div className="row">
-      <div className="col-4">
+      <div className="col-4 s">
         <Select
           options={currencies}
           placeholder="USD"
@@ -151,7 +152,7 @@ function TrendOptions(props) {
           onChange={handleChange}
         ></Select>
       </div>
-      <div className="col-4">
+      <div className="col-4 s">
         <Select
           options={currencies}
           placeholder="INR"
@@ -159,7 +160,7 @@ function TrendOptions(props) {
           onChange={handleChange1}
         ></Select>
       </div>
-      <div className="col-4">
+      <div className="col-4 s">
         <Select
           options={years}
           placeholder="2012"
