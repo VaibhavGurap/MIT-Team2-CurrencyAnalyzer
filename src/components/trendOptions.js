@@ -3,7 +3,7 @@ import Select from 'react-select';
 
 function TrendOptions(props) {
     const style = {width:'100px', display:'inline-block',margin:'2%'}
-    const currencies = ["DZD", "AUD", "BHD", "VEF", "VES", "BWP", "BRL", "BND", "CAD", "CLP", "CNY", "COP", "CZK", "DKK", "EUR", "HUF", "ISK", "INR", "IDR", "IRR", "ILS", "JPY", "KZT", "KRW", "KWD", "LYD", "MYR", "MUR", "MXN", "NPR", "NZD", "NOK", "OMR", "PKR", "PEN", "PHP", "PLN", "QAR", "RUB", "SAR", "SGD", "ZAR", "LKR", "SEK", "CHF", "THB", "TTD", "TND", "AED", "GBP", "USD", "UYU"]
+    const currencies = require('../currency.json')
     const label = ['value','label']
     const options = [
       { value: 'USD', label: 'USD' },
