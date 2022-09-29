@@ -1,13 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import {TrendOptions} from './components/trendOptions';
-import { components } from 'react-select';
-
+import {Graph} from './components/graph';
 
 function App() {
   return (
     <div className="App">
-      <TrendOptions className='trendOpt'></TrendOptions>
+      <div >
+      <TrendOptions className='trendOpt' id='currency_1'/>
+      <TrendOptions className='trendOpt' id='currency_2'/>
+      </div>
+      <div>
+        <Graph/>
+      </div>
     </div>
   );
 }
