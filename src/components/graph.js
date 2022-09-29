@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-export default class graph extends Component {
+export default class Graph extends Component {
   render() {
-    return (
-      <div>graph</div>
-    )
+    return <div>graph</div>;
   }
 }
+export { Graph };
