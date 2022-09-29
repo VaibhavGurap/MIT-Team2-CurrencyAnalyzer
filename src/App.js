@@ -6,7 +6,7 @@ import LineChart from "./components/LineChart";
 import Data from "./data";
 import Year from "./Year";
 import Currency from "./Currency";
-import TrendOptions from "./components/trendOptions";
+import { TrendOptions } from "./components/trendOptions";
 
 function App() {
   const [selected, setSelected] = useState("2012"); //selects the year
@@ -36,14 +36,8 @@ function App() {
     <div className="major ">
       <div className="container">
         <div className="row drop">
-          <div className="col-2">
-            <TrendOptions />
-          </div>
-          <div className="col-2">
-            <TrendOptions />
-          </div>
-          <div className="col-8">
-            <Year selected={selected} setSelected={setSelected} />
+          <div className="col-4">
+            <TrendOptions daily={daily} />
           </div>
         </div>
         <div className="row">
