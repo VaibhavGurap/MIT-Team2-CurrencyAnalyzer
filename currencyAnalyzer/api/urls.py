@@ -12,6 +12,8 @@ urlpatterns = [
     path('trend/<year>/<curr1>/<curr2>/q',Trend.quarterly),
     path('trend/<year>/<curr1>/<curr2>/y',Trend.yearly),
     path('currency/',Currency.getAll),
+    path(r'currency/converter',Currency.converter),
+    path(r'currency/getExchangeRates',Currency.getExchangeRate),
     #path('',include(router.urls)),
 
 ]
